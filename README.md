@@ -1,18 +1,20 @@
 # MySQL Installation Automation
 
-This project provides an automated solution to install MySQL on both macOS and Linux systems. It guides the user through the installation process, simplifying the task by requiring only a few inputs. The user can either use the Python script or the pre-built executable file to install MySQL.
+This project provides an automated solution to install MySQL on both macOS and Linux systems. It guides the user through the installation process, simplifying the task by requiring only a few inputs. Users can choose between a Python script, a pre-built executable file, or a Bash script to install MySQL.
 
 ## Project Structure
 
-- **`install_mysql.py`**: This is the main Python script that performs the MySQL installation. It prompts the user for the operating system and provides instructions for logging into MySQL after installation.
-  
+- **`python-version/install_mysql.py`**: The main Python script that performs the MySQL installation. It prompts the user for the operating system and provides instructions for logging into MySQL after installation.
+
 - **`dist/`**: Contains the executable file for users who prefer not to run the Python script manually. The executable is packaged to work independently without requiring Python or dependencies to be installed.
+
+- **`bash-version/install_mysql.sh`**: The Bash script version of the installer. This script offers a command-line interface for installing MySQL on macOS and Linux.
 
 ## Features
 
-- **OS Detection**: The script automatically tailors the installation process based on whether you're using macOS or Linux.
+- **OS Detection**: Automatically tailors the installation process based on whether you're using macOS or Linux.
   
-- **MySQL Installation**: It installs the latest version of MySQL using Homebrew (for macOS) or apt (for Linux).
+- **MySQL Installation**: Installs the latest version of MySQL using Homebrew (for macOS) or apt (for Linux).
 
 - **Instructions for MySQL Usage**: After installation, the program provides instructions on how to log in to your MySQL server, including:
   - Starting the MySQL service.
@@ -37,7 +39,7 @@ This project provides an automated solution to install MySQL on both macOS and L
 
 3. Run the Python script:
    ```bash
-   python install_mysql.py
+   python python-version/install_mysql.py
    ```
 
 4. Follow the on-screen instructions:
@@ -58,7 +60,28 @@ For users who don't want to run the Python script manually, an executable versio
      ```
 3. Follow the on-screen instructions for installation and MySQL login.
 
-### 3. Logging into MySQL After Installation
+### 3. Using the Bash Script
+
+For users who prefer a command-line interface, a Bash script is provided:
+
+1. Navigate to the `bash-version/` directory:
+   ```bash
+   cd bash-version
+   ```
+
+2. Make the Bash script executable:
+   ```bash
+   chmod +x install_mysql.sh
+   ```
+
+3. Run the Bash script:
+   ```bash
+   ./install_mysql.sh
+   ```
+
+4. Follow the on-screen instructions for installation and MySQL login.
+
+### 4. Logging into MySQL After Installation
 
 After MySQL is installed, follow these steps to log in:
 
@@ -96,6 +119,10 @@ After MySQL is installed, follow these steps to log in:
 ### If Using the Executable:
 
 - No additional requirements. The executable is self-contained.
+
+### If Using the Bash Script:
+
+- The script should run on any Unix-based system (macOS or Linux) with Bash installed.
 
 ## License
 
