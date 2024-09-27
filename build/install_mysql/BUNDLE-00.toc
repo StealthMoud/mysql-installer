@@ -1,3 +1,0 @@
-([('install_mysql',
-   '/Users/stealthmoud/Projects/mysql-installer/dist/install_mysql',
-   'EXECUTABLE')],)
